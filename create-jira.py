@@ -4,11 +4,12 @@ import requests
 from requests.auth import HTTPBasicAuth
 import json
 
-url = "https://veeramallaabhishek.atlassian.net/rest/api/3/issue"
+url = "https://sagar8340103595.atlassian.net//rest/api/3/issue"
 
-API_TOKEN = ""
+API_TOKEN="ATATT3xFfGF0PdfTjWDiQcIvtU8r3TykNsDYCMMjl2u20vVTRoh52KhcnGgEFqcaUKflo1Qg2Sa5PVG2ci_deTZ7QlyG3RtzF02OJ-0rgcECfqLt4WVABkECrYLbYAnrtfCy4MDNr_ztXXDe_mCVizexgMq4VVnvetS1a6G2nq93m8u06ndLLiY=F4D28576"
 
-auth = HTTPBasicAuth("", API_TOKEN)
+
+auth = HTTPBasicAuth("kumarsagar8340103595@gmail.com", API_TOKEN)
 
 headers = {
   "Accept": "application/json",
@@ -36,7 +37,7 @@ payload = json.dumps( {
       "key": "AB"
     },
     "issuetype": {
-      "id": "10006"
+      "id": "10001"
     },
     "summary": "First JIRA Ticket",
   },
@@ -51,4 +52,7 @@ response = requests.request(
    auth=auth
 )
 
-print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
+ return json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": "))
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
